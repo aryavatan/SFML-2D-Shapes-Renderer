@@ -1,4 +1,4 @@
-# SFML-2D-SHAPES-RENDERER License
+# SFML-2D-Shapes-Renderer License
 ## Public Domain
 
 This is free and unencumbered software released into the public domain.
