@@ -17,7 +17,11 @@ class ShapeManager
     public:
         std::vector<Shape> shapes;
 
-        void tick();
+        void tick(sf::Window& window);
+
+    private:
+        void collisionCheck(Shape& shape, sf::Vector2u& windowSize);
+        void updatePosition(Shape& shape);
 };
 
 #endif

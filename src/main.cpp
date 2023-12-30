@@ -22,7 +22,7 @@ int main()
         
         window.clear();
 
-        shapeManager.tick();
+        shapeManager.tick(window);
         for(Shape& shape : shapeManager.shapes)
         {
             window.draw(*shape.sf_shape);
