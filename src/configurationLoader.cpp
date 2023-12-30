@@ -17,7 +17,6 @@ ConfigurationLoader::ConfigurationLoader(const string& filepath)
         stringstream lineStream(line);
         while (getline(lineStream, arg, ' ')) 
         {
-            cout << arg << endl;
             lineArgs.push_back(arg);
         }
         processConfigurationLine(lineArgs);
