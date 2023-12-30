@@ -10,5 +10,6 @@ class ConfigurationLoader
         unsigned int m_windowWidth = 100u;
         unsigned int m_windowHeight = 100u;
 
-        void setWindowMembers();
+        void processConfigurationLine(std::vector<std::string>& lineArguments);
+        void setWindowMembers(std::vector<std::string>& lineArguments);
 };

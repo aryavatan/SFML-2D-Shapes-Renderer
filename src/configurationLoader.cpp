@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// ===== Public functions =====
 ConfigurationLoader::ConfigurationLoader(const string& filepath)
 {
     ifstream file(filepath);
@@ -12,11 +13,14 @@ ConfigurationLoader::ConfigurationLoader(const string& filepath)
 
     while(getline(file, line))
     {
+        vector<string> lineArgs;
         stringstream lineStream(line);
         while (getline(lineStream, arg, ' ')) 
         {
             cout << arg << endl;
+            lineArgs.push_back(arg);
         }
+        processConfigurationLine(lineArgs);
     }
 
     file.close();
@@ -32,7 +36,36 @@ unsigned int ConfigurationLoader::getWindowHeight()
     return m_windowHeight;
 }
 
-void ConfigurationLoader::setWindowMembers()
+// ===== Private functions =====
+void ConfigurationLoader::processConfigurationLine(vector<string>& lineArguments)
 {
+    string argType = lineArguments.front();
 
+    if (argType == "Window")
+    {
+        setWindowMembers(lineArguments);
+    }
+    else if (argType == "Font")
+    {
+
+    }
+    else if (argType == "Rectangle")
+    {
+
+    }
+    else if (argType == "Circle")
+    {
+
+    }
+    else
+    {
+        cout << "Error: Configuration line of type [" << argType << "] is not valid." << endl;
+    }
+}
+
+void ConfigurationLoader::setWindowMembers(vector<string>& lineArguments)
+{
+    // Window W H
+    m_windowWidth = stoul(lineArguments.at(1));
+    m_windowHeight = stoul(lineArguments.at(2));
 }
