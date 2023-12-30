@@ -1,9 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "configurationLoader.h"
 
 int main()
 {
-    auto window = sf::RenderWindow{ { 1280u, 720u }, "CMake SFML Project" };
-    window.setFramerateLimit(144);
+    ConfigurationLoader configuration("../../configuration.txt");
+    
+    auto window = sf::RenderWindow{ { configuration.getWindowWidth(), configuration.getWindowHeight() }, "SFML-2D-Shapes-Renderer" };
+    window.setFramerateLimit(60);
 
     while (window.isOpen())
     {
