@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include "configurationLoader.h"
+#include "shapeManager.h"
 
 int main()
 {
-    ConfigurationLoader configuration("../../configuration.txt");
+    ShapeManager shapeManager;
+    ConfigurationLoader configuration("../../configuration.txt", shapeManager);
     
     auto window = sf::RenderWindow{ { configuration.getWindowWidth(), configuration.getWindowHeight() }, "SFML-2D-Shapes-Renderer" };
     window.setFramerateLimit(60);
@@ -17,8 +19,14 @@ int main()
                 window.close();
             }
         }
-
+        
         window.clear();
+
+        for(Shape& shape : shapeManager.shapes)
+        {
+            window.draw(*shape.sf_shape);
+        }
+
         window.display();
     }
 }
