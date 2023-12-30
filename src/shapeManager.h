@@ -10,8 +10,6 @@ class Shape
         std::shared_ptr<sf::Shape> sf_shape;
         std::string name;
         float velocityX, velocityY;
-        
-        void tick();
 };
 
 class ShapeManager
