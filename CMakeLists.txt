@@ -10,7 +10,7 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(SFML-2D-Shapes-Renderer src/main.cpp src/configurationLoader.cpp)
+add_executable(SFML-2D-Shapes-Renderer src/main.cpp src/configurationLoader.cpp src/shapeManager.cpp)
 
 target_link_libraries(SFML-2D-Shapes-Renderer PRIVATE sfml-graphics)
 target_compile_features(SFML-2D-Shapes-Renderer PRIVATE cxx_std_17)
