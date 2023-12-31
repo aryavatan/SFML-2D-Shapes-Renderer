@@ -2,7 +2,7 @@
 
 A simple and configurable 2D renderer for moving shapes (rectangles and circles) made with C++ and SFML. Configurations for the shapes are read into the application through a text file, and then the application will continuously calculate and draw the shapes to the window (given their initial position and speed).
 
-This project is heavily inspired by assignment 1 of professor Dave Churchill's "C++ Game Programming" course, taught at the Memorial University of Newfoundland during the fall 2022 term (COMP4300). I was able to unofficially complet his course because he graciously posted every lecture of the course on YouTube. I will include the link to the YouTube playlist for anyone interested [here](https://www.youtube.com/playlist?list=PL_xRyXins848nDj2v-TJYahzvs-XW9sVV). I want to be clear, I did not copy any code from him (in fact, none were provided). All the code written in this repository was written by me, after watching and studying his lectures.
+This project is heavily inspired by assignment 1 of professor Dave Churchill's "C++ Game Programming" course, taught at the Memorial University of Newfoundland during the fall 2022 term (COMP4300). I was able to unofficially complete his course because he graciously posted every lecture of the course on YouTube. I will include the link to the YouTube playlist for anyone interested [here](https://www.youtube.com/playlist?list=PL_xRyXins848nDj2v-TJYahzvs-XW9sVV). I want to be clear, I did not copy any code from him (in fact, none were provided). All the code written in this repository was written by me, after watching and studying his lectures.
 
 ## How to configure the shapes
 
@@ -13,8 +13,8 @@ Each line of the configuration text file specifies one of the config settings of
 - This line declares that the SFML Window must be constructed with width W and height H, each of which will be integers
 
 **Font F S R G B**
-- This lines defines the font which is to be used to draw text for this program. The format of the line is as follows:
-- Font File (path) - F - `std::string` (it will have no spaces)
+- This line defines the font which is to be used to draw text for this program. The format of the line is as follows:
+- Font name (must be located inside the `Fonts` folder) - F - `std::string` (it will have no spaces)
 - Font Size - S - `int`
 - RGB Color - (R, G, B) - `int, int, int`
 
