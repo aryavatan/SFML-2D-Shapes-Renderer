@@ -4,6 +4,8 @@ A simple and configurable 2D renderer for moving shapes (rectangles and circles)
 
 This project is heavily inspired by assignment 1 of professor Dave Churchill's "C++ Game Programming" course, taught at the Memorial University of Newfoundland during the fall 2022 term (COMP4300). I was able to unofficially complete his course because he graciously posted every lecture of the course on YouTube. I will include the link to the YouTube playlist for anyone interested [here](https://www.youtube.com/playlist?list=PL_xRyXins848nDj2v-TJYahzvs-XW9sVV). I want to be clear, I did not copy any code from him (in fact, none were provided). All the code written in this repository was written by me, after watching and studying his lectures.
 
+I posted a short YouTube clip showcasing the application in action [here](https://www.youtube.com/watch?v=7kvdFnJ9VuM).
+
 ## How to configure the shapes
 
 Each line of the configuration text file specifies one of the config settings of the program, with the first string in each line being the type of setting that the rest of the line specifies. Lines in the config file can be one of the following types, and lines can appear in (generally) any order in the file.
