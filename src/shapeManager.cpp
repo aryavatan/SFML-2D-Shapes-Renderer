@@ -36,8 +36,15 @@ void ShapeManager::collisionCheck(Shape& shape, sf::Vector2u& windowSize)
 
 void ShapeManager::updatePosition(Shape& shape)
 {
+    // Shape
     sf::Vector2f position = shape.sf_shape->getPosition();
     position.x += shape.velocityX;
     position.y += shape.velocityY;
     shape.sf_shape->setPosition(position);
+
+    // Text
+    position = shape.sf_text->getPosition();
+    position.x += shape.velocityX;
+    position.y += shape.velocityY;
+    shape.sf_text->setPosition(position);
 }

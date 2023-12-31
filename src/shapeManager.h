@@ -8,7 +8,7 @@ class Shape
 {
     public:
         std::shared_ptr<sf::Shape> sf_shape;
-        std::string name;
+        std::shared_ptr<sf::Text> sf_text;
         float velocityX, velocityY;
 };
 

@@ -26,6 +26,7 @@ int main()
         for(Shape& shape : shapeManager.shapes)
         {
             window.draw(*shape.sf_shape);
+            window.draw(*shape.sf_text);
         }
 
         window.display();
