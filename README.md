@@ -15,6 +15,7 @@ Each line of the configuration text file specifies one of the config settings of
 - This line declares that the SFML Window must be constructed with width W and height H, each of which will be integers
 
 **Font F S R G B**
+- Always the second line in the configuration file
 - This line defines the font which is to be used to draw text for this program. The format of the line is as follows:
 - Font name (must be located inside the `Fonts` folder) - F - `std::string` (it will have no spaces)
 - Font Size - S - `int`

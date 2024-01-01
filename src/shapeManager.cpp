@@ -48,3 +48,44 @@ void ShapeManager::updatePosition(Shape& shape)
     position.y += shape.velocityY;
     shape.sf_text->setPosition(position);
 }
+
+void ShapeManager::setFontSettings(sf::Font& font, sf::Color& color, unsigned int fontSize)
+{
+    m_font = font;
+    m_fontColor = color;
+    m_fontSize = fontSize;
+}
+
+void ShapeManager::createRectangle(std::string& name, sf::Vector2f& position, sf::Color& color, float velocityX, float velocityY, float width, float height)
+{
+    Shape rect;
+    rect.sf_shape = std::make_shared<sf::RectangleShape>(sf::Vector2f(width, height));
+    initializeShape(rect, name, position, color, velocityX, velocityY);
+}
+
+void ShapeManager::createCircle(std::string& name, sf::Vector2f& position, sf::Color& color, float velocityX, float velocityY, float radius)
+{
+    Shape circle;
+    circle.sf_shape = std::make_shared<sf::CircleShape>(radius);
+    initializeShape(circle, name, position, color, velocityX, velocityY);
+}
+
+void ShapeManager::initializeShape(Shape& shape, std::string& name, sf::Vector2f& position, sf::Color& color, float velocityX, float velocityY)
+{
+    shape.sf_shape->setPosition(position);
+    shape.sf_shape->setFillColor(color);
+    shape.velocityX = velocityX;
+    shape.velocityY = velocityY;
+
+    shape.sf_text = std::make_shared<sf::Text>();
+    shape.sf_text->setFont(m_font);
+    shape.sf_text->setFillColor(m_fontColor);
+    shape.sf_text->setCharacterSize(m_fontSize);
+    shape.sf_text->setString(name);
+
+    float textPosX = position.x + (shape.sf_shape->getLocalBounds().width / 2) - (shape.sf_text->getLocalBounds().width / 2);
+    float textPosY = position.y + (shape.sf_shape->getLocalBounds().height / 2) - (shape.sf_text->getLocalBounds().height / 2);
+    shape.sf_text->setPosition(sf::Vector2f(textPosX, textPosY));
+
+    shapes.push_back(shape);
+}

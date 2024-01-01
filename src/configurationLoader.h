@@ -12,9 +12,6 @@ class ConfigurationLoader
     private:
         unsigned int m_windowWidth = 100u;
         unsigned int m_windowHeight = 100u;
-        unsigned int m_fontSize = 14u;
-        sf::Font m_font;
-        sf::Color m_fontColor;
         ShapeManager& m_shapeManager;
 
         void processConfigurationLine(std::vector<std::string>& lineArguments);
